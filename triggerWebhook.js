@@ -15,8 +15,7 @@ module.exports = (payload) => {
     const req = https.request(process.env.WEBHOOK_URL, options, res => {
       console.log(`statusCode: ${res.statusCode}`);
       res.on('data', d => {
-        const resData = JSON.parse(d);
-        console.log(resData);
+        console.log(d.toString());
         resolve(true);
       });
     });
