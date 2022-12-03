@@ -3,6 +3,7 @@
     "local": "node -e \"console.log(require('./index').handler());\""
   },
   "dependencies": {
+    "aws-sdk": "^2.1267.0",
     "crypto": "^1.0.1",
     "https": "^1.0.0"
   }
