@@ -1,0 +1,1 @@
+# Switchbot Status Checker
