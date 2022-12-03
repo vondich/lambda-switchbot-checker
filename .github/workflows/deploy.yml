@@ -7,6 +7,7 @@ on:
   
 jobs:
   deploy:
+    name: Deploy lambda
     runs-on: ubuntu-latest
     steps:
       - name: Checkout to repo
@@ -20,11 +21,11 @@ jobs:
       - name: Create archive
         uses: thedoctor0/zip-release@main
         with:
-        type: 'zip'
-        filename: 'bundle.zip'
-        exclusions: '*.git* /*node_modules/* .editorconfig .env*'
-      
-     - name: Deploy lambda
+          type: 'zip'
+          filename: 'bundle.zip'
+          exclusions: '*.git* /*node_modules/* .editorconfig .env*'
+
+      - name: Deploy lambda
         uses: appleboy/lambda-action@master
         with:
           aws_access_key_id: ${{ secrets.AWS_ACCESS_KEY_ID }}
