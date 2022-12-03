@@ -20,9 +20,10 @@ exports.handler = async function(event) {
       if ((currentTime - lastOnTimestamp) >= autoOffThresholdInSeconds) {
         console.log('Turning off device');
         await switchbot.setStatus(false);
+        await triggerWebhook({ message: 'Heater turned off'});
       // if it's turned on but within the threshold, just call the webhook
       } else {
-        await triggerWebhook();
+        await triggerWebhook({ message: 'Heater is on'});
         console.log('Webhook triggered');
       }
     // reset status tracking if it's turned off

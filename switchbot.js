@@ -60,7 +60,7 @@ const setStatus = (on) => {
     "command": on ? "turnOn" : "turnOff",
     "parameter": "default",
     "commandType": "command"
-});
+  });
 
   const options = {
     hostname: 'api.switch-bot.com',
