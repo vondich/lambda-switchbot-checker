@@ -6,8 +6,8 @@ on:
         main
   
 jobs:
-  lambda-deploy:
-  	runs-on: ubuntu-latest
+  deploy:
+    runs-on: ubuntu-latest
     steps:
       - name: Checkout to repo
         uses: actions/checkout@v3
